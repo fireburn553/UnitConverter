@@ -47,15 +47,15 @@ Users select from three options:
 
 - Celsius, Fahrenheit, Kelvin
 
-### 3. Area Conversion _(Planned)_
+### 3. Area Conversion
 
 - Square Meters, Square Kilometers, Acres, Hectares, etc.
 
-### 4. Volume Conversion _(Now Added! 🎉)_
+### 4. Volume Conversion
 
 - Milliliters, Liters, Cubic Meters, Gallons, Pints, etc.
 
-### 5. Weight Conversion _(Planned)_
+### 5. Weight Conversion
 
 - Grams, Kilograms, Pounds, Ounces, etc.
 
@@ -69,7 +69,6 @@ Users select from three options:
 ## Future Improvements
 
 🔹 Add **more unit categories** (e.g., Speed, Pressure, Time).  
-🔹 Implement **unit conversion formulas for Area & Weight**.  
 🔹 Provide **a GUI version** for better user experience.  
 🔹 Save **history to a file** for persistence after program exit.
 
