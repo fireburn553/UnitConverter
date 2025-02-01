@@ -1,4 +1,5 @@
-data class ConversionHistory( // This data class ConversionHistory help us to store the history of the conversion
+data class ConversionHistory( // This data class ConversionHistory help us to store the history of
+        // the conversion
         val fromUnit: String,
         val toUnit: String,
         val inputValue: Double,
@@ -6,15 +7,16 @@ data class ConversionHistory( // This data class ConversionHistory help us to st
 )
 
 data class UnitInfo( // This data class UnitInfo help us to store the unit information
-        val unitName: String,
-        val shortName: String,
-        val conversionFactorToBase: Double
-)
+val unitName: String, val shortName: String, val conversionFactorToBase: Double)
 
-val conversionHistory = mutableListOf<ConversionHistory>() // This mutable list conversionHistory help us to store the history of the conversion
+val conversionHistory =
+        mutableListOf<
+                ConversionHistory>() // This mutable list conversionHistory help us to store the
+// history of the conversion
 
-val conversionTableLength = // This map conversionTableLength help us to store the conversion table for the length
-        mapOf(
+val conversionTableLength = // This map conversionTableLength help us to store the conversion table
+// for the length
+mapOf(
                 1 to UnitInfo("centimeter", "cm", 0.01),
                 2 to UnitInfo("meter", "m", 1.0),
                 3 to UnitInfo("kilometer", "km", 1000.0),
@@ -28,15 +30,17 @@ val conversionTableLength = // This map conversionTableLength help us to store t
                 11 to UnitInfo("light year", "ly", 9.461e15)
         )
 
-val conversionTableTemperature = // This map conversionTableTemperature help us to store the conversion table for the temperature
-        mapOf(
+val conversionTableTemperature = // This map conversionTableTemperature help us to store the
+// conversion table for the temperature
+mapOf(
                 1 to UnitInfo("Celsius", "C", 1.0),
                 2 to UnitInfo("Fahrenheit", "F", 1.0),
                 3 to UnitInfo("Kelvin", "K", 1.0)
         )
 
-val conversionTableArea =  // This map conversionTableArea help us to store the conversion table for the area
-        mapOf(
+val conversionTableArea = // This map conversionTableArea help us to store the conversion table for
+// the area
+mapOf(
                 1 to UnitInfo("square meter", "m²", 1.0),
                 2 to UnitInfo("square kilometer", "km²", 1_000_000.0),
                 3 to UnitInfo("square centimeter", "cm²", 0.0001),
@@ -48,8 +52,9 @@ val conversionTableArea =  // This map conversionTableArea help us to store the 
                 9 to UnitInfo("square yard", "yd²", 0.836127)
         )
 
-val conversionTableVolume = // This map conversionTableVolume help us to store the conversion table for the volume
-        mapOf(
+val conversionTableVolume = // This map conversionTableVolume help us to store the conversion table
+// for the volume
+mapOf(
                 1 to UnitInfo("liter", "L", 1.0),
                 2 to UnitInfo("milliliter", "mL", 0.001),
                 3 to UnitInfo("cubic meter", "m³", 1000.0),
@@ -60,8 +65,9 @@ val conversionTableVolume = // This map conversionTableVolume help us to store t
                 8 to UnitInfo("pint", "pt", 0.473176)
         )
 
-val conversionTableWeight =  // This map conversionTableWeight help us to store the conversion table for the weight
-        mapOf(
+val conversionTableWeight = // This map conversionTableWeight help us to store the conversion table
+// for the weight
+mapOf(
                 1 to UnitInfo("gram", "g", 1.0),
                 2 to UnitInfo("kilogram", "kg", 1000.0),
                 3 to UnitInfo("metric ton", "t", 1000000.0),
@@ -70,13 +76,12 @@ val conversionTableWeight =  // This map conversionTableWeight help us to store 
                 6 to UnitInfo("pound", "lb", 453.592),
                 7 to UnitInfo("ounce", "oz", 28.3495),
                 8 to UnitInfo("stone", "st", 6350.29)
-)
+        )
 
-
-class Menu {    // This class Menu help us to show the different menu options
+class Menu { // This class Menu help us to show the different menu options
     fun showLengthMenu() { // This function showLenghtMenu help us to show the different length
         // conversion
-    
+
         val convertMenu =
                 """
         [1] centimeter
@@ -94,11 +99,12 @@ class Menu {    // This class Menu help us to show the different menu options
         """.trimIndent() // the trimIndent removes the common minimal indent of all the input lines from first and last lines
         println(convertMenu) // it's printing the menu
     }
-    
+
     fun showWeightMenu() { // This function showWeightMenu help us to show the different weight
         // conversion
-    
-        println("""
+
+        println(
+                """
         [1] Gram (g)
         [2] Kilogram (kg)
         [3] Metric Ton (t)
@@ -108,12 +114,14 @@ class Menu {    // This class Menu help us to show the different menu options
         [7] Ounce (oz)
         [8] Stone (st)
         [9] Back to the main menu
-        """.trimIndent())
+        """.trimIndent()
+        )
     }
-    
-    fun showAreaMenu() {    // This function showAreaMenu help us to show the different area
+
+    fun showAreaMenu() { // This function showAreaMenu help us to show the different area
         // conversion
-        println("""
+        println(
+                """
         [1] Square Meter (m²)
         [2] Square Kilometer (km²)
         [3] Square Centimeter (cm²)
@@ -124,11 +132,14 @@ class Menu {    // This class Menu help us to show the different menu options
         [8] Square Inch (in²)
         [9] Square Yard (yd²)
         [10] Back to the main menu
-        """.trimIndent())
+        """.trimIndent()
+        )
     }
-    
-    fun showVolumeMenu() { // This function showVolumeMenu help us to show the different volume conversion
-        println("""
+
+    fun showVolumeMenu() { // This function showVolumeMenu help us to show the different volume
+        // conversion
+        println(
+                """
         [1] Liter (L)
         [2] Milliliter (mL)
         [3] Cubic Meter (m³)
@@ -138,27 +149,33 @@ class Menu {    // This class Menu help us to show the different menu options
         [7] Gallon (gal)
         [8] Pint (pt)
         [9] Back to the main menu
-        """.trimIndent())
+        """.trimIndent()
+        )
     }
-    
-    fun showConvertMenu() { // This function showConvertMenu help us to show the different conversion
+
+    fun showConvertMenu() { // This function showConvertMenu help us to show the different
+        // conversion
         // menu
-        println("""
+        println(
+                """
         [1] Length
         [2] Temperature
         [3] Area
         [4] Volume
         [5] Weight
         [6] Back to the main menu
-        """.trimIndent()) // the trimIndent removes the common minimal indent of all the input lines from first and last lines"""
+        """.trimIndent()
+        ) // the trimIndent removes the common minimal indent of all the input lines from first and
+        // last lines"""
     }
 }
 
-class ConversionHistoryManager{ // This class Conversion History Manager help us to show the history of the conversion and clear the history
-    
+class ConversionHistoryManager { // This class Conversion History Manager help us to show the
+    // history of the conversion and clear the history
 
-    fun clearHistory() { // This function clearHistory help us to clear the history of the conversion
-        if (conversionHistory.isEmpty()) { //checking if the mutable list is empty
+    fun clearHistory() { // This function clearHistory help us to clear the history of the
+        // conversion
+        if (conversionHistory.isEmpty()) { // checking if the mutable list is empty
             println("No conversion history to clear.")
         } else {
             conversionHistory.clear() // Clear all stored conversions
@@ -166,69 +183,109 @@ class ConversionHistoryManager{ // This class Conversion History Manager help us
         }
     }
 
-    fun storeChoice(fromChoice: Int, toChoice: Int, inputValue: Double, outputValue: Double, conversionTable: Map<Int, UnitInfo>) { // This function storeChoice help us to store the conversion history
-        val fromUnit = conversionTable[fromChoice]?.unitName ?: "Unknown" // Get the unit name from the conversion table
-        val toUnit = conversionTable[toChoice]?.unitName ?: "Unknown" // Get the unit name from the conversion table
-        
-        val history = ConversionHistory(fromUnit, toUnit, inputValue, outputValue)  // Create a new history object
+    fun storeChoice(
+            fromChoice: Int,
+            toChoice: Int,
+            inputValue: Double,
+            outputValue: Double,
+            conversionTable: Map<Int, UnitInfo>
+    ) { // This function storeChoice help us to store the conversion history
+        val fromUnit =
+                conversionTable[fromChoice]?.unitName
+                        ?: "Unknown" // Get the unit name from the conversion table
+        val toUnit =
+                conversionTable[toChoice]?.unitName
+                        ?: "Unknown" // Get the unit name from the conversion table
+
+        val history =
+                ConversionHistory(
+                        fromUnit,
+                        toUnit,
+                        inputValue,
+                        outputValue
+                ) // Create a new history object
         conversionHistory.add(history) // Save to the list
-        
-        println("Conversion Stored: From: ${history.inputValue} $fromUnit To: ${history.outputValue} $toUnit") // Print the stored conversion
+
+        println(
+                "Conversion Stored: From: ${history.inputValue} $fromUnit To: ${history.outputValue} $toUnit"
+        ) // Print the stored conversion
     }
 
     fun viewHistory() { // This function viewHistory help us to view the history of the conversion
-        if (conversionHistory.isEmpty()) {  // Check if the history is empty
+        if (conversionHistory.isEmpty()) { // Check if the history is empty
             println("No conversion history available.")
             return
         }
 
         println("Conversion History:") // Print the history
         conversionHistory.forEachIndexed { index, record -> // use iteration over the history list
-            println("${index + 1}. From: ${record.inputValue} ${record.fromUnit} To: ${record.outputValue} ${record.toUnit}") // Print each record
+            println(
+                    "${index + 1}. From: ${record.inputValue} ${record.fromUnit} To: ${record.outputValue} ${record.toUnit}"
+            ) // Print each record
         }
-            
-            // Ask the user if they want to clear the history
-            println("\nDo you want to clear the history? (yes/no)")
-            val input = readLine()?.trim()?.lowercase() // Read user input, trim and convert to lowercase
-            if (input == "yes") { // Check if the user wants to clear the history
-                clearHistory()  // Call the clearHistory function
-            }
+
+        // Ask the user if they want to clear the history
+        println("\nDo you want to clear the history? (yes/no)")
+        val input =
+                readLine()?.trim()?.lowercase() // Read user input, trim and convert to lowercase
+        if (input == "yes") { // Check if the user wants to clear the history
+            clearHistory() // Call the clearHistory function
+        }
     }
 }
 
-
 fun convertOptionLength() { // This function convertOptionLength help us to convert the length
-    var isInConvertMenu = true 
+    clearScreen()
+    separator()
+    var isInConvertMenu = true
     val menu = Menu() // Create an instance of the Menu class
     val chm = ConversionHistoryManager() // Create an instance of the ConversionHistoryManager class
 
-    while (isInConvertMenu) {   // Use While loop so that when the user is picking the choice will not going back to the menu unless the user choose to go back
-        menu.showLengthMenu()    // Call the showLengthMenu function
+    while (isInConvertMenu) { // Use While loop so that when the user is picking the choice will not
+        // going back to the menu unless the user choose to go back
+        menu.showLengthMenu() // Call the showLengthMenu function
         println("Choose the number for the unit to convert from:") // Print the message
-        
+
         val choiceFrom = readValidChoice(1..12) // used helper function to validate user input
         if (choiceFrom == 12) { // If the user choose 12, it will go back to the main menu
             println("Back to the main menu") // Print the message
-            isInConvertMenu = false     // Set the isInConvertMenu to false so that it will go back to the main menu
-            continue    // Continue to the next iteration
+            isInConvertMenu =
+                    false // Set the isInConvertMenu to false so that it will go back to the main
+            // menu
+            continue // Continue to the next iteration
         }
 
-       menu.showLengthMenu()   // Call the showLengthMenu function
+        menu.showLengthMenu() // Call the showLengthMenu function
         println("Choose the number for the unit to convert to:") // Print the message
-        val choiceTo = readValidChoice(1..11)   // used helper function to validate user input
-       
+        val choiceTo = readValidChoice(1..11) // used helper function to validate user input
+
         println("Enter the value to convert:") // Print the message
-        val inputValue = readValidDouble()    // used helper function to validate user input
-        
-        val fromFactor = conversionTableLength[choiceFrom]?.conversionFactorToBase // Get the conversion factor from the table
-        val toFactor = conversionTableLength[choiceTo]?.conversionFactorToBase // Get the conversion factor from the table
+        val inputValue = readValidDouble() // used helper function to validate user input
 
-        if (fromFactor != null && toFactor != null) { // Check if the conversion factors are not null
-            val outputValue = (inputValue * fromFactor) / toFactor   // Convert to target unit
-            println("Converted Value: $outputValue ${conversionTableLength[choiceTo]?.unitName}") // Print the converted value
+        val fromFactor =
+                conversionTableLength[choiceFrom]
+                        ?.conversionFactorToBase // Get the conversion factor from the table
+        val toFactor =
+                conversionTableLength[choiceTo]
+                        ?.conversionFactorToBase // Get the conversion factor from the table
 
-            chm.storeChoice(choiceFrom, choiceTo, inputValue, outputValue, conversionTableLength) // Store the conversion
-            isInConvertMenu = false // Set the isInConvertMenu to false so that it will go back to the main menu
+        if (fromFactor != null && toFactor != null
+        ) { // Check if the conversion factors are not null
+            val outputValue = (inputValue * fromFactor) / toFactor // Convert to target unit
+            println(
+                    "Converted Value: $outputValue ${conversionTableLength[choiceTo]?.unitName}"
+            ) // Print the converted value
+
+            chm.storeChoice(
+                    choiceFrom,
+                    choiceTo,
+                    inputValue,
+                    outputValue,
+                    conversionTableLength
+            ) // Store the conversion
+            isInConvertMenu =
+                    false // Set the isInConvertMenu to false so that it will go back to the main
+            // menu
         } else {
             println("Invalid conversion choices.") // Print the message
         }
@@ -236,16 +293,21 @@ fun convertOptionLength() { // This function convertOptionLength help us to conv
 }
 
 fun convertOptionVolume() { // This function convertOptionVolume help us to convert the volume
+    clearScreen()
+    separator()
     var isInConvertMenu = true // declare isInConvertMenu for the loop
     val chm = ConversionHistoryManager() // Create an instance of the ConversionHistoryManager class
     val menu = Menu() // Create an instance of the Menu class
-    while (isInConvertMenu) { // Use While loop so that when the user is picking the choice will not going back to the menu unless the user choose to go back
+    while (isInConvertMenu) { // Use While loop so that when the user is picking the choice will not
+        // going back to the menu unless the user choose to go back
         menu.showVolumeMenu() // Call the showVolumeMenu function
         println("Choose the number for the unit to convert from:") // Print the message
         val choiceFrom = readValidChoice(1..9) // used helper function to validate user input
         if (choiceFrom == 9) { // If the user choose 9, it will go back to the main menu
-            println("Back to the main menu")    // Print the message
-            isInConvertMenu = false // Set the isInConvertMenu to false so that it will go back to the main menu
+            println("Back to the main menu") // Print the message
+            isInConvertMenu =
+                    false // Set the isInConvertMenu to false so that it will go back to the main
+            // menu
             continue
         }
 
@@ -253,17 +315,30 @@ fun convertOptionVolume() { // This function convertOptionVolume help us to conv
         println("Choose the number for the unit to convert to:") // Print the message
         val choiceTo = readValidChoice(1..8) // used helper function to validate user input
 
-        println("Enter the value to convert:")  // Print the message
+        println("Enter the value to convert:") // Print the message
         val inputValue = readValidDouble() // used helper function to validate user input
 
-        val fromFactor = conversionTableVolume[choiceFrom]?.conversionFactorToBase // Get the conversion factor from the table
-        val toFactor = conversionTableVolume[choiceTo]?.conversionFactorToBase // Get the conversion factor from the table
+        val fromFactor =
+                conversionTableVolume[choiceFrom]
+                        ?.conversionFactorToBase // Get the conversion factor from the table
+        val toFactor =
+                conversionTableVolume[choiceTo]
+                        ?.conversionFactorToBase // Get the conversion factor from the table
 
-        if (fromFactor != null && toFactor != null) { // Check if the conversion factors are not null
+        if (fromFactor != null && toFactor != null
+        ) { // Check if the conversion factors are not null
             val outputValue = (inputValue * fromFactor) / toFactor // Convert to target unit
-            println("Converted Value: $outputValue ${conversionTableVolume[choiceTo]?.unitName}") // Print the converted value
+            println(
+                    "Converted Value: $outputValue ${conversionTableVolume[choiceTo]?.unitName}"
+            ) // Print the converted value
 
-            chm.storeChoice(choiceFrom, choiceTo, inputValue, outputValue, conversionTableVolume) // Store the conversion
+            chm.storeChoice(
+                    choiceFrom,
+                    choiceTo,
+                    inputValue,
+                    outputValue,
+                    conversionTableVolume
+            ) // Store the conversion
             isInConvertMenu = false
         } else {
             println("Invalid conversion choices.")
@@ -271,14 +346,17 @@ fun convertOptionVolume() { // This function convertOptionVolume help us to conv
     }
 }
 
-fun convertOptionArea() {   // This function convertOptionArea help us to convert the area
+fun convertOptionArea() { // This function convertOptionArea help us to convert the area
+    clearScreen()
+    separator()
     var isInConvertMenu = true
-    val chm = ConversionHistoryManager() // Create an instance of the ConversionHistoryManager class   
+    val chm = ConversionHistoryManager() // Create an instance of the ConversionHistoryManager class
     val menu = Menu() // Create an instance of the Menu class
-    while (isInConvertMenu) { // Use While loop so that when the user is picking the choice will not going back to the menu unless the user choose to go back
-        menu.showAreaMenu() 
-        println("Choose the number for the unit to convert from:")  
-        
+    while (isInConvertMenu) { // Use While loop so that when the user is picking the choice will not
+        // going back to the menu unless the user choose to go back
+        menu.showAreaMenu()
+        println("Choose the number for the unit to convert from:")
+
         val choiceFrom = readValidChoice(1..10) // used helper function to validate user input
         if (choiceFrom == 10) {
             println("Back to the main menu")
@@ -298,7 +376,9 @@ fun convertOptionArea() {   // This function convertOptionArea help us to conver
 
         if (fromFactor != null && toFactor != null) {
             val outputValue = (inputValue * fromFactor) / toFactor // Convert to target unit
-            println("Converted Value: $outputValue ${conversionTableArea[choiceTo]?.unitName}") // Print the converted value
+            println(
+                    "Converted Value: $outputValue ${conversionTableArea[choiceTo]?.unitName}"
+            ) // Print the converted value
 
             chm.storeChoice(choiceFrom, choiceTo, inputValue, outputValue, conversionTableArea)
             isInConvertMenu = false
@@ -308,34 +388,48 @@ fun convertOptionArea() {   // This function convertOptionArea help us to conver
     }
 }
 
-fun convertOptionTemperature() { // This function convertOptionTemperature help us to convert the temperature
+fun convertOptionTemperature() { // This function convertOptionTemperature help us to convert the
+    // temperature
+    clearScreen()
+    separator()
     val chm = ConversionHistoryManager() // Create an instance of the ConversionHistoryManager class
     println("Choose the number for the unit to convert from:") // Print the message
     println("[1] Celsius\n[2] Fahrenheit\n[3] Kelvin") // Print the option
     val choiceFrom = readValidChoice(1..3) // used helper function to validate user input
-    
+
     println("Choose the number for the unit to convert to:") // Print the message
     val choiceTo = readValidChoice(1..3) // used helper function to validate user input
-    
+
     println("Enter the value to convert:")
     val inputValue = readValidDouble() // used helper function to validate user input
-    
-    val outputValue = when (choiceFrom to choiceTo) { // Use when to check the choice
-        1 to 2 -> (inputValue * 9/5) + 32 // Celsius to Fahrenheit 
-        1 to 3 -> inputValue + 273.15    // Celsius to Kelvin
-        2 to 1 -> (inputValue - 32) * 5/9 // Fahrenheit to Celsius
-        2 to 3 -> (inputValue - 32) * 5/9 + 273.15 // Fahrenheit to Kelvin
-        3 to 1 -> inputValue - 273.15 // Kelvin to Celsius
-        3 to 2 -> (inputValue - 273.15) * 9/5 + 32 // Kelvin to Fahrenheit
-        else -> inputValue // Same unit conversion
-    }
-    
-    println("Converted Value: $outputValue ${conversionTableTemperature[choiceTo]?.unitName}") // Print the converted value
-    chm.storeChoice(choiceFrom, choiceTo, inputValue, outputValue, conversionTableTemperature) // Store the conversion
+
+    val outputValue =
+            when (choiceFrom to choiceTo) { // Use when to check the choice
+                1 to 2 -> (inputValue * 9 / 5) + 32 // Celsius to Fahrenheit
+                1 to 3 -> inputValue + 273.15 // Celsius to Kelvin
+                2 to 1 -> (inputValue - 32) * 5 / 9 // Fahrenheit to Celsius
+                2 to 3 -> (inputValue - 32) * 5 / 9 + 273.15 // Fahrenheit to Kelvin
+                3 to 1 -> inputValue - 273.15 // Kelvin to Celsius
+                3 to 2 -> (inputValue - 273.15) * 9 / 5 + 32 // Kelvin to Fahrenheit
+                else -> inputValue // Same unit conversion
+            }
+
+    println(
+            "Converted Value: $outputValue ${conversionTableTemperature[choiceTo]?.unitName}"
+    ) // Print the converted value
+    chm.storeChoice(
+            choiceFrom,
+            choiceTo,
+            inputValue,
+            outputValue,
+            conversionTableTemperature
+    ) // Store the conversion
 }
 
-fun convertOptionWeight(){  // This function convertOptionWeight help us to convert the weight
-    //Same conversion process just like the other convertOption functions
+fun convertOptionWeight() { // This function convertOptionWeight help us to convert the weight
+    // Same conversion process just like the other convertOption functions
+    clearScreen()
+    separator()
     var isInConvertMenu = true
     val chm = ConversionHistoryManager() // Create an instance of the ConversionHistoryManager class
     val menu = Menu() // Create an instance of the Menu class
@@ -372,16 +466,23 @@ fun convertOptionWeight(){  // This function convertOptionWeight help us to conv
 }
 
 // Helper function to read and validate an integer choice within a range
-fun readValidChoice(validRange: IntRange): Int { // This function readValidChoice help us to read and validate an integer choice within a range
-    while (true) { 
+fun readValidChoice(
+        validRange: IntRange
+): Int { // This function readValidChoice help us to read and validate an integer choice within a
+    // range
+    while (true) {
         val choice = readChoice() // call the readChoice function
-        if (choice in validRange) return choice!! // If the choice is in the valid range, return the choice
-        println("Invalid input. Please select a number between ${validRange.first} and ${validRange.last}.")
+        if (choice in validRange)
+                return choice!! // If the choice is in the valid range, return the choice
+        println(
+                "Invalid input. Please select a number between ${validRange.first} and ${validRange.last}."
+        )
     }
 }
 
 // Helper function to read and validate a numeric input
-fun readValidDouble(): Double { // This function readValidDouble help us to read and validate a numeric input
+fun readValidDouble():
+        Double { // This function readValidDouble help us to read and validate a numeric input
     while (true) { // Use while loop to keep asking the user to enter a valid numeric value
         val input = readLine()?.toDoubleOrNull() // Read the input and convert it to Double
         if (input != null) return input // If the input is not null, return the input
@@ -391,6 +492,8 @@ fun readValidDouble(): Double { // This function readValidDouble help us to read
 
 fun convertOption() { // This function handles the functions ShowConvertMenu, handleConvertChoice,
     // and the readChoice function
+    clearScreen()
+    separator()
     var isInConvertMenu = true // declare isInConvertMenu for the loop
     val menu = Menu() // Create an instance of the Menu class
     while (isInConvertMenu) { // While the user is picking the choice and not going back to the menu
@@ -403,14 +506,22 @@ fun convertOption() { // This function handles the functions ShowConvertMenu, ha
                 println("Length Conversion")
                 convertOptionLength() // To convert the length
             } // To convert the length
-            2 -> {println("Temperature Conversion")
-                convertOptionTemperature() }// To convert the temperature
-            3 -> {println("Area Conversion")
-                convertOptionArea()} // To convert the Area
-            4 -> {println("Volume Conversion")
-                convertOptionVolume()} // To convert the volume
-            5 -> {println("Weight Conversion") 
-                convertOptionWeight()}// To convert the weight
+            2 -> {
+                println("Temperature Conversion")
+                convertOptionTemperature()
+            } // To convert the temperature
+            3 -> {
+                println("Area Conversion")
+                convertOptionArea()
+            } // To convert the Area
+            4 -> {
+                println("Volume Conversion")
+                convertOptionVolume()
+            } // To convert the volume
+            5 -> {
+                println("Weight Conversion")
+                convertOptionWeight()
+            } // To convert the weight
             6 -> return // Back to the main menu
             else ->
                     println(
@@ -420,17 +531,35 @@ fun convertOption() { // This function handles the functions ShowConvertMenu, ha
     }
 }
 
-        
 fun readChoice(): Int? { // function to accept the user input and return in Integer
     val input = readLine()
     return input?.toIntOrNull() // I use toIntOrNull function to parses a string as an integer and
     // returns the result or null if the string is not a valid number.
 }
 
+fun separator() {
+    println(
+            """
+                                                                                                      
+  _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ 
+ |_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|
+ |_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|
+                                                                                                  
+                                                                                                  
+    """
+    )
+}
+
+fun clearScreen() {
+    print("\u001b[H\u001b[2J")
+    System.out.flush()
+}
+
 fun main() {
     val chm = ConversionHistoryManager() // Create an instance of the ConversionHistoryManager class
+    clearScreen()
     val menu =
-        """
+            """
     [1] Convert
     [2] View History (Clear option included)
     [3] Quit
@@ -438,10 +567,27 @@ fun main() {
 
     var isRunning = true
 
-    println("WELCOME TO UNIT CONVERTER!!")
+    println(
+            """
+ __        _______ _     ____ ___  __  __ _____ 
+ \ \      / / ____| |   / ___/ _ \|  \/  | ____|
+  \ \ /\ / /|  _| | |  | |  | | | | |\/| |  _|  
+   \ V  V / | |___| |__| |__| |_| | |  | | |___ 
+    \_/\_/  |_____|_____\____\___/|_|  |_|_____|
+                                                """
+    )
+    println(
+            """
+     _   _ _   _ ___ _____    ____ ___  _   ___     _______ ____ _____ _____ ____  
+    | | | | \ | |_ _|_   _|  / ___/ _ \| \ | \ \   / / ____|  _ \_   _| ____|  _ \ 
+    | | | |  \| || |  | |   | |  | | | |  \| |\ \ / /|  _| | |_) || | |  _| | |_) |
+    | |_| | |\  || |  | |   | |__| |_| | |\  | \ V / | |___|  _ < | | | |___|  _ < 
+     \___/|_| \_|___| |_|    \____\___/|_| \_|  \_/  |_____|_| \_\|_| |_____|_| \_\
+    """
+    )
 
     while (isRunning) { // Use while loop to keep the program running until the user choose to quit
-        println(menu) 
+        println(menu)
         println("Enter the number of your choice for the menu")
 
         when (readChoice()) {
@@ -449,10 +595,19 @@ fun main() {
             2 -> chm.viewHistory() // Includes the option to clear history
             3 -> {
                 println("Thank you for using the Unit Converter! Goodbye!")
+                println(
+                        """
+  _____ _   _    _    _   _ _  __ __   _____  _   _ _ 
+ |_   _| | | |  / \  | \ | | |/ / \ \ / / _ \| | | | |
+   | | | |_| | / _ \ |  \| | ' /   \ V / | | | | | | |
+   | | |  _  |/ ___ \| |\  | . \    | || |_| | |_| |_|
+   |_| |_| |_/_/   \_\_| \_|_|\_\   |_| \___/ \___/(_)
+                                                      
+                """
+                )
                 isRunning = false
             }
             else -> println("Invalid choice, please select 1, 2, or 3.")
         }
     }
 }
-
